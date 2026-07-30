@@ -1,7 +1,7 @@
 /* ==========================================
    JØXTV PRE STREAM SYSTEM
-   STYLE ENGINE v3.0
-   OBS READY 1920x1080
+   STYLE ENGINE v4.0
+   TIKTOK STUDIO READY
 ========================================== */
 
 
@@ -42,7 +42,7 @@ body {
 
 
 /* ==========================================
-   FIX CANVAS 1920x1080
+   FIX CANVAS - RESPONSIVE
 ========================================== */
 
 
@@ -50,33 +50,13 @@ body {
 
     position:absolute;
 
-    width:1920px;
-    height:1080px;
+    width:100%;
+    height:100%;
 
-    padding:45px;
+    padding:20px;
 
-    transform-origin:top left;
-
-}
-
-
-
-
-/* AUTO SCALE */
-
-@media screen {
-
-    .overlay {
-
-        transform:
-        scale(
-            min(
-                calc(100vw / 1920),
-                calc(100vh / 1080)
-            )
-        );
-
-    }
+    max-width:1920px;
+    max-height:1080px;
 
 }
 
@@ -92,8 +72,8 @@ body {
 
     position:fixed;
 
-    width:900px;
-    height:900px;
+    width:400px;
+    height:400px;
 
     border-radius:50%;
 
@@ -106,10 +86,10 @@ body {
     );
 
 
-    filter:blur(120px);
+    filter:blur(80px);
 
-    top:-300px;
-    left:-250px;
+    top:-100px;
+    left:-100px;
 
 
     animation:
@@ -133,7 +113,7 @@ body {
     to {
 
         transform:
-        translate(400px,250px);
+        translate(200px,150px);
 
     }
 
@@ -170,7 +150,7 @@ body::before {
     );
 
 
-    background-size:45px 45px;
+    background-size:25px 25px;
 
     pointer-events:none;
 
@@ -224,7 +204,7 @@ body::after {
 
 .top-bar {
 
-    height:90px;
+    height:60px;
 
     display:flex;
 
@@ -232,7 +212,7 @@ body::after {
 
     align-items:center;
 
-    margin-bottom:25px;
+    margin-bottom:15px;
 
 }
 
@@ -251,11 +231,11 @@ body::after {
 .logo {
 
 
-    font-size:42px;
+    font-size:24px;
 
     font-weight:900;
 
-    letter-spacing:8px;
+    letter-spacing:4px;
 
 
     color:#c084fc;
@@ -265,7 +245,7 @@ body::after {
 
     0 0 10px #a855f7,
 
-    0 0 35px #7e22ce;
+    0 0 25px #7e22ce;
 
 }
 
@@ -274,9 +254,9 @@ body::after {
 .status {
 
 
-    font-size:14px;
+    font-size:10px;
 
-    letter-spacing:5px;
+    letter-spacing:3px;
 
     opacity:.65;
 
@@ -290,10 +270,10 @@ body::after {
 
     padding:
 
-    15px 25px;
+    risk:10px 18px;
 
 
-    border-radius:30px;
+    border-radius:20px;
 
 
     border:
@@ -306,7 +286,10 @@ body::after {
     rgba(168,85,247,.08);
 
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:blur(15px);
+
+    font-size:11px;
+    letter-spacing:2px;
 
 }
 
@@ -318,9 +301,9 @@ body::after {
     display:inline-block;
 
 
-    width:10px;
+    width:8px;
 
-    height:10px;
+    height:8px;
 
 
     border-radius:50%;
@@ -329,12 +312,12 @@ body::after {
     background:#c084fc;
 
 
-    margin-right:10px;
+    margin-right:8px;
 
 
     box-shadow:
 
-    0 0 20px #c084fc;
+    0 0 15px #c084fc;
 
 
     animation:pulse 1.5s infinite;
@@ -374,10 +357,10 @@ body::after {
     2fr 1fr;
 
 
-    gap:25px;
+    gap:15px;
 
 
-    height:700px;
+    height:calc(100% - 120px);
 
 }
 
@@ -403,15 +386,15 @@ body::after {
     1px solid rgba(255,255,255,.12);
 
 
-    border-radius:25px;
+    border-radius:18px;
 
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:blur(15px);
 
 
     box-shadow:
 
-    0 0 50px rgba(0,0,0,.7);
+    0 0 30px rgba(0,0,0,.5);
 
 
     position:relative;
@@ -502,16 +485,16 @@ body::after {
 .hud-title {
 
 
-    padding:25px;
+    padding:15px;
 
 
     color:#d8b4fe;
 
 
-    font-size:14px;
+    font-size:11px;
 
 
-    letter-spacing:4px;
+    letter-spacing:3px;
 
 }
 
@@ -532,7 +515,7 @@ body::after {
 .cam-icon {
 
 
-    font-size:80px;
+    font-size:50px;
 
 
     color:#c084fc;
@@ -540,7 +523,7 @@ body::after {
 
     text-shadow:
 
-    0 0 30px #a855f7;
+    0 0 20px #a855f7;
 
 }
 
@@ -550,10 +533,10 @@ body::after {
 .camera-center h1 {
 
 
-    font-size:45px;
+    font-size:28px;
 
 
-    letter-spacing:8px;
+    letter-spacing:5px;
 
 }
 
@@ -562,10 +545,12 @@ body::after {
 .camera-center p {
 
 
-    margin-top:15px;
+    margin-top:10px;
 
 
     opacity:.5;
+
+    font-size:12px;
 
 }
 
@@ -578,16 +563,16 @@ body::after {
     position:absolute;
 
 
-    bottom:20px;
+    bottom:15px;
 
 
-    left:25px;
+    left:15px;
 
 
-    font-size:12px;
+    font-size:10px;
 
 
-    letter-spacing:3px;
+    letter-spacing:2px;
 
 }
 
@@ -612,7 +597,7 @@ body::after {
 .chat {
 
 
-    padding:25px;
+    padding:15px;
 
 }
 
@@ -624,13 +609,13 @@ body::after {
     color:#d8b4fe;
 
 
-    font-size:16px;
+    font-size:12px;
 
 
-    letter-spacing:4px;
+    letter-spacing:3px;
 
 
-    margin-bottom:20px;
+    margin-bottom:15px;
 
 }
 
@@ -644,7 +629,7 @@ body::after {
     flex-direction:column;
 
 
-    gap:15px;
+    gap:10px;
 
 }
 
@@ -654,10 +639,10 @@ body::after {
 .message {
 
 
-    padding:15px;
+    padding:12px;
 
 
-    border-radius:15px;
+    border-radius:12px;
 
 
     background:
@@ -665,7 +650,7 @@ body::after {
     rgba(255,255,255,.05);
 
 
-    font-size:14px;
+    font-size:12px;
 
 }
 
@@ -692,13 +677,13 @@ body::after {
 .music {
 
 
-    margin-top:25px;
+    margin-top:15px;
 
 
-    height:150px;
+    height:100px;
 
 
-    padding:25px;
+    padding:15px;
 
 
     display:flex;
@@ -721,7 +706,7 @@ body::after {
 
     align-items:center;
 
-    gap:20px;
+    gap:15px;
 
 }
 
@@ -731,12 +716,12 @@ body::after {
 .cover {
 
 
-    width:90px;
+    width:60px;
 
-    height:90px;
+    height:60px;
 
 
-    border-radius:20px;
+    border-radius:15px;
 
 
     display:flex;
@@ -746,7 +731,7 @@ body::after {
     align-items:center;
 
 
-    font-size:40px;
+    font-size:28px;
 
 
     background:
@@ -764,7 +749,7 @@ body::after {
 
     box-shadow:
 
-    0 0 30px #a855f7;
+    0 0 20px #a855f7;
 
 }
 
@@ -774,7 +759,7 @@ body::after {
 .song {
 
 
-    font-size:24px;
+    font-size:16px;
 
 }
 
@@ -786,7 +771,9 @@ body::after {
 
     opacity:.5;
 
-    margin-top:8px;
+    margin-top:5px;
+
+    font-size:11px;
 
 }
 
@@ -803,7 +790,7 @@ body::after {
 
     display:flex;
 
-    gap:8px;
+    gap:6px;
 
     align-items:flex-end;
 
@@ -814,16 +801,16 @@ body::after {
 .equalizer span {
 
 
-    width:8px;
+    width:6px;
 
 
-    height:25px;
+    height:18px;
 
 
     background:#c084fc;
 
 
-    border-radius:10px;
+    border-radius:8px;
 
 
     animation:
@@ -870,7 +857,7 @@ animation-delay:.8s;
 
     50% {
 
-        height:70px;
+        height:50px;
 
     }
 

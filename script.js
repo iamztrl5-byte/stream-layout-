@@ -1,6 +1,7 @@
 /* ==========================================
    JØXTV PRE STREAM SYSTEM
-   JAVASCRIPT ENGINE v2.0
+   JAVASCRIPT ENGINE v3.0
+   RESPONSIVE FIX
 ========================================== */
 
 
@@ -309,17 +310,14 @@ setInterval(
 updateTime,
 1000
 );
-
 updateTime();
 
 
 
 
 
-
-
 // ==========================================
-// BACKGROUND PARTICLES
+// BACKGROUND PARTICLES - RESPONSIVE
 // ==========================================
 
 
@@ -328,45 +326,61 @@ document.querySelector(".particles");
 
 
 
-for(let i=0;i<40;i++){
+function createParticles() {
+    
+    // Clear existing particles
+    particles.innerHTML = '';
+    
+    // Get current window dimensions
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    
+    for(let i=0;i<30;i++){
 
 
-const p =
-document.createElement("span");
+        const p =
+        document.createElement("span");
 
 
-p.style.position="absolute";
+        p.style.position="absolute";
 
-p.style.width="3px";
+        p.style.width="3px";
 
-p.style.height="3px";
+        p.style.height="3px";
 
-p.style.background="#c084fc";
+        p.style.background="#c084fc";
 
-p.style.borderRadius="50%";
+        p.style.borderRadius="50%";
 
-p.style.left =
-Math.random()*1920+"px";
-
-
-p.style.top =
-Math.random()*1080+"px";
+        p.style.left =
+        Math.random()*width+"px";
 
 
-p.style.opacity =
-Math.random();
+        p.style.top =
+        Math.random()*height+"px";
 
 
-p.style.boxShadow =
-"0 0 15px #a855f7";
+        p.style.opacity =
+        Math.random();
 
 
-
-particles.appendChild(p);
+        p.style.boxShadow =
+        "0 0 15px #a855f7";
 
 
 
+        particles.appendChild(p);
+
+
+
+    }
 }
+
+// Create particles on load
+createParticles();
+
+// Recreate particles on resize
+window.addEventListener('resize', createParticles);
 
 
 

@@ -1,1 +1,828 @@
+/* ==========================================
+   JØXTV PRE STREAM SYSTEM
+   STYLE ENGINE v2.0
+========================================== */
 
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    width: 1920px;
+    height: 1080px;
+
+    overflow: hidden;
+
+    background:
+    radial-gradient(circle at 20% 20%, #3b0764 0%, transparent 35%),
+    radial-gradient(circle at 80% 80%, #581c87 0%, transparent 30%),
+    #030303;
+
+    color:white;
+
+    font-family:
+    'Orbitron',
+    Arial,
+    sans-serif;
+
+}
+
+
+
+/* ==========================================
+   BACKGROUND EFFECTS
+========================================== */
+
+
+.background {
+
+    position:absolute;
+
+    width:900px;
+    height:900px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(168,85,247,0.25),
+        transparent 65%
+    );
+
+    filter:blur(120px);
+
+    top:-300px;
+    left:-200px;
+
+    animation:
+    floating 12s infinite alternate;
+
+}
+
+
+@keyframes floating {
+
+    from {
+
+        transform:
+        translate(0,0);
+
+    }
+
+    to {
+
+        transform:
+        translate(400px,250px);
+
+    }
+
+}
+
+
+
+/* GRID CYBER */
+
+body::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(
+    rgba(255,255,255,.025) 1px,
+    transparent 1px
+    ),
+
+    linear-gradient(
+    90deg,
+    rgba(255,255,255,.025) 1px,
+    transparent 1px
+    );
+
+
+    background-size:
+    45px 45px;
+
+
+    pointer-events:none;
+
+}
+
+
+
+/* SCANLINES */
+
+body::after {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+
+    0deg,
+
+    rgba(255,255,255,.025),
+
+    rgba(255,255,255,.025) 1px,
+
+    transparent 2px,
+
+    transparent 5px
+
+    );
+
+
+    opacity:.25;
+
+    pointer-events:none;
+
+}
+
+
+
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+
+.overlay {
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    padding:45px;
+
+}
+
+
+
+/* ==========================================
+   TOP BAR
+========================================== */
+
+
+.top-bar {
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
+    margin-bottom:25px;
+
+}
+
+
+
+.brand {
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+.logo {
+
+    font-size:42px;
+
+    font-weight:900;
+
+    letter-spacing:8px;
+
+
+    color:#c084fc;
+
+
+    text-shadow:
+
+    0 0 10px #a855f7,
+    0 0 30px #7e22ce;
+
+}
+
+
+
+.status {
+
+    font-size:14px;
+
+    letter-spacing:5px;
+
+    opacity:.6;
+
+}
+
+
+
+
+.online {
+
+
+    border:
+
+    1px solid rgba(168,85,247,.5);
+
+
+    padding:
+
+    15px 25px;
+
+
+    border-radius:30px;
+
+
+    background:
+
+    rgba(168,85,247,.08);
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+}
+
+
+
+.dot {
+
+    display:inline-block;
+
+    width:10px;
+
+    height:10px;
+
+
+    background:#a855f7;
+
+
+    border-radius:50%;
+
+
+    margin-right:10px;
+
+
+    box-shadow:
+
+    0 0 15px #a855f7;
+
+
+    animation:pulse 1.5s infinite;
+
+}
+
+
+
+@keyframes pulse {
+
+    50% {
+
+        opacity:.3;
+
+    }
+
+}
+
+
+
+
+/* ==========================================
+   MAIN GRID
+========================================== */
+
+
+.layout {
+
+    display:grid;
+
+    grid-template-columns:
+
+    2fr 1fr;
+
+
+    gap:25px;
+
+
+    height:700px;
+
+}
+
+
+
+
+/* ==========================================
+   GLASS PANELS
+========================================== */
+
+
+.glass {
+
+
+    background:
+
+    rgba(255,255,255,.045);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 0 50px rgba(0,0,0,.7);
+
+
+    position:relative;
+
+    overflow:hidden;
+
+
+}
+
+
+
+/* shine */
+
+.glass::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    width:200%;
+
+    height:2px;
+
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    #c084fc,
+
+    transparent
+
+    );
+
+
+    top:0;
+
+    left:-100%;
+
+
+    animation:
+
+    shine 6s infinite;
+
+
+}
+
+
+
+@keyframes shine {
+
+
+    100% {
+
+        left:100%;
+
+    }
+
+}
+
+
+
+
+/* ==========================================
+   CAMERA BOX
+========================================== */
+
+
+.camera {
+
+
+    display:flex;
+
+    flex-direction:column;
+
+
+}
+
+
+
+.hud-title {
+
+
+    padding:25px;
+
+
+    font-size:14px;
+
+
+    letter-spacing:4px;
+
+
+    color:#d8b4fe;
+
+
+}
+
+
+
+
+.camera-center {
+
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+
+.cam-icon {
+
+
+    font-size:80px;
+
+
+    color:#c084fc;
+
+
+    text-shadow:
+
+    0 0 30px #a855f7;
+
+
+}
+
+
+
+.camera-center h1 {
+
+
+    font-size:45px;
+
+
+    letter-spacing:8px;
+
+
+}
+
+
+
+.camera-center p {
+
+
+    opacity:.5;
+
+    margin-top:15px;
+
+}
+
+
+
+
+.camera-footer {
+
+
+    position:absolute;
+
+
+    bottom:20px;
+
+    left:25px;
+
+
+    font-size:12px;
+
+
+    letter-spacing:3px;
+
+
+}
+
+
+
+.camera-footer span {
+
+
+    color:#c084fc;
+
+
+}
+
+
+
+
+/* ==========================================
+   CHAT
+========================================== */
+
+
+.chat {
+
+
+    padding:25px;
+
+
+}
+
+
+
+.section-title {
+
+
+    font-size:16px;
+
+
+    letter-spacing:4px;
+
+
+    color:#d8b4fe;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+#chatMessages {
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.message {
+
+
+    padding:15px;
+
+
+    background:
+
+    rgba(255,255,255,.05);
+
+
+    border-radius:15px;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+.message b {
+
+
+    color:#c084fc;
+
+    display:block;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   MUSIC
+========================================== */
+
+
+.music {
+
+
+    margin-top:25px;
+
+
+    height:150px;
+
+
+    padding:25px;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+}
+
+
+
+.music-info {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+
+}
+
+
+
+
+.cover {
+
+
+    width:90px;
+
+    height:90px;
+
+
+    border-radius:20px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #7e22ce,
+
+    #c084fc
+
+    );
+
+
+    font-size:40px;
+
+
+    box-shadow:
+
+    0 0 30px #a855f7;
+
+
+}
+
+
+
+.song {
+
+
+    font-size:24px;
+
+}
+
+
+
+.artist {
+
+
+    opacity:.5;
+
+    margin-top:8px;
+
+}
+
+
+
+/* EQUALIZER */
+
+
+.equalizer {
+
+
+    display:flex;
+
+    gap:8px;
+
+    align-items:flex-end;
+
+
+}
+
+
+
+.equalizer span {
+
+
+    width:8px;
+
+
+    height:25px;
+
+
+    background:#c084fc;
+
+
+    border-radius:10px;
+
+
+    animation:
+
+    equal 1s infinite;
+
+
+}
+
+
+
+
+.equalizer span:nth-child(2){
+
+animation-delay:.2s;
+
+}
+
+.equalizer span:nth-child(3){
+
+animation-delay:.4s;
+
+}
+
+.equalizer span:nth-child(4){
+
+animation-delay:.6s;
+
+}
+
+.equalizer span:nth-child(5){
+
+animation-delay:.8s;
+
+}
+
+
+
+
+@keyframes equal {
+
+
+    50% {
+
+        height:70px;
+
+    }
+
+}

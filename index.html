@@ -1,156 +1,180 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 <meta charset="UTF-8">
-<title>Pre-Stream Overlay</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
+<title>JØXTV Pre Stream</title>
 
-body {
-  width: 1920px;
-  height: 1080px;
-  background: radial-gradient(circle at top, #0f0f0f, #050505);
-  overflow: hidden;
-  color: white;
-}
+<link rel="stylesheet" href="style.css">
 
-/* GRID BASE */
-.container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 200px;
-  gap: 20px;
-  padding: 30px;
-  height: 100%;
-}
-
-/* ZONA VIDEO / CAM */
-.cam-zone {
-  border: 2px solid rgba(255,255,255,0.1);
-  border-radius: 20px;
-  position: relative;
-  background: rgba(255,255,255,0.02);
-  backdrop-filter: blur(10px);
-}
-
-.cam-label {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  font-size: 18px;
-  opacity: 0.6;
-  letter-spacing: 2px;
-}
-
-/* CHAT */
-.chat-box {
-  border: 2px solid rgba(255,255,255,0.1);
-  border-radius: 20px;
-  padding: 15px;
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-}
-
-.chat-title {
-  font-size: 16px;
-  margin-bottom: 10px;
-  opacity: 0.7;
-}
-
-.chat-content {
-  flex: 1;
-  overflow: hidden;
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-/* MUSICA */
-.music-box {
-  grid-column: span 2;
-  border: 2px solid rgba(255,255,255,0.1);
-  border-radius: 20px;
-  padding: 20px;
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(10px);
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.song-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.song-title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.song-artist {
-  font-size: 14px;
-  opacity: 0.6;
-}
-
-/* ANIMAZIONE PULSE */
-.glow {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: rgba(0, 255, 200, 0.08);
-  filter: blur(120px);
-  top: -50px;
-  left: -50px;
-  animation: moveGlow 10s infinite alternate;
-}
-
-@keyframes moveGlow {
-  0% { transform: translate(0,0); }
-  100% { transform: translate(200px,100px); }
-}
-
-</style>
 </head>
 
 <body>
 
-<div class="glow"></div>
+<div class="background"></div>
+<div class="particles"></div>
 
-<div class="container">
 
-  <!-- CAM / VIDEO -->
-  <div class="cam-zone">
-    <div class="cam-label">STREAM STARTING</div>
-  </div>
+<div class="overlay">
 
-  <!-- CHAT -->
-  <div class="chat-box">
-    <div class="chat-title">LIVE CHAT</div>
-    <div class="chat-content">
-      Qui poi colleghi StreamElements / TikTok chat
-    </div>
-  </div>
 
-  <!-- MUSICA -->
-  <div class="music-box">
-    <div class="song-info">
-      <div class="song-title">Titolo Canzone</div>
-      <div class="song-artist">Artista</div>
-    </div>
+    <!-- HEADER -->
 
-    <div class="song-time">00:00</div>
-  </div>
+    <header class="top-bar">
+
+        <div class="brand">
+            <span class="logo">JØXTV</span>
+            <span class="status">
+                PRE STREAM SYSTEM
+            </span>
+        </div>
+
+
+        <div class="online">
+            <span class="dot"></span>
+            SYSTEM ONLINE
+        </div>
+
+    </header>
+
+
+
+
+    <!-- MAIN -->
+
+    <main class="layout">
+
+
+        <!-- CAMERA -->
+
+        <section class="camera glass">
+
+
+            <div class="hud-title">
+                CAM_01 // LIVING ROOM
+            </div>
+
+
+            <div class="camera-center">
+
+                <div class="cam-icon">
+                    ◉
+                </div>
+
+                <h1>
+                    STARTING SOON
+                </h1>
+
+                <p>
+                    Preparing stream...
+                </p>
+
+            </div>
+
+
+            <div class="camera-footer">
+
+                SIGNAL:
+                <span>
+                    ONLINE
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- CHAT -->
+
+        <section class="chat glass">
+
+
+            <div class="section-title">
+                💬 LIVE CHAT
+            </div>
+
+
+            <div id="chatMessages">
+
+                <div class="message">
+                    <b>System</b>
+                    Waiting for viewers...
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+
+
+
+    <!-- MUSIC -->
+
+    <section class="music glass">
+
+
+        <div class="music-info">
+
+
+            <div class="cover">
+                ♪
+            </div>
+
+
+            <div>
+
+                <div class="song">
+                    No Song Playing
+                </div>
+
+                <div class="artist">
+                    Waiting...
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="equalizer">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+    </section>
+
+
 
 </div>
 
+
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>
